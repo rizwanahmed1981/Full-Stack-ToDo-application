@@ -1,0 +1,7 @@
+# Requirements for the Todo Application
+
+# Python 3.13 (or compatible version)
+python>=3.12
+
+# For running tests
+unittest

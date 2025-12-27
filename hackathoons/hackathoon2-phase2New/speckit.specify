@@ -1,0 +1,37 @@
+# In-Memory Console Todo Application
+
+## Overview
+A Python 3.13 console-based todo application that implements CRUD operations with a clean architecture approach. The application will store todos in memory and provide a command-line interface for managing tasks.
+
+## Core Features
+1. Create new todos
+2. Read/display all todos
+3. Update existing todos
+4. Delete todos
+5. Mark todos as complete
+6. Clear all todos
+
+## Architecture
+Follow Clean Architecture principles with separation of concerns:
+- Presentation Layer: Console interface for user interaction
+- Service Layer: Business logic and todo management operations
+- Data Layer: In-memory storage of todos
+
+## Technical Requirements
+- Python 3.13
+- In-memory storage (no persistence to disk)
+- Console-based interface
+- Object-oriented design
+- Type hints for all functions and classes
+- Proper error handling
+- Unit tests for core functionality
+
+## User Commands
+- `add <task>` - Add a new todo item
+- `list` - Display all todos
+- `complete <id>` - Mark a todo as complete
+- `update <id> <new_task>` - Update an existing todo
+- `delete <id>` - Delete a todo
+- `clear` - Delete all todos
+- `help` - Show available commands
+- `quit` - Exit the application
