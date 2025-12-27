@@ -1,0 +1,42 @@
+# Project Constitution: Evolution of Todo - Phase I: Todo In-Memory Python Console App
+
+## Philosophy
+- Code is a liability, Specs are the asset.
+- Every line of code must serve a clearly specified purpose.
+- All development follows Spec-Driven Development (SDD) methodology.
+
+## Technology Stack
+- **Language:** Python 3.14
+- **Dependency Management:** `uv`
+- **Testing Framework:** `pytest`
+- **Architecture Pattern:** Modular design with separation of concerns
+
+## Architecture Principles
+- **Separation of Concerns:** Clear division between `models`, `services`, `ui`
+- **In-Memory Storage:** No database allowed in Phase I; use Python lists/dictionaries
+- **Testability:** All logic must be testable via `pytest`
+- **Modularity:** Components should be loosely coupled and highly cohesive
+
+## Development Workflow
+- No code is written without a Task ID from `speckit.tasks`
+- All features must have corresponding specifications before implementation
+- All code must have associated tests
+- Changes are made through pull requests with code review
+
+## Quality Standards
+- All code must be documented with docstrings
+- Error handling must be comprehensive
+- Input validation must be thorough
+- Code must follow Python best practices and PEP 8 standards
+
+## Testing Requirements
+- Unit tests for all business logic
+- Integration tests for component interactions
+- Test coverage must be maintained at acceptable levels
+- All tests must pass before merging
+
+## Deployment Constraints
+- Phase I: Console application only
+- No external database dependencies
+- In-memory data persistence only
+- Cross-platform compatibility (Windows, macOS, Linux)

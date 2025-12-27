@@ -1,0 +1,101 @@
+# Specification: Evolution of Todo - Phase I: Todo In-Memory Python Console App
+
+## Project Goal
+A CLI tool to manage a Todo list with in-memory storage, providing basic task management functionality through a console interface.
+
+## User Journeys (Basic Features)
+
+### 1. Add Task
+- **Actor:** User
+- **Action:** Inputs title (required) and description (optional)
+- **System Response:** Saves the task with a unique ID and "Pending" status
+- **Acceptance Criteria:**
+  - Task is stored in memory with auto-generated unique ID
+  - Title is mandatory and validated
+  - Description is optional
+  - Status defaults to "Pending"
+
+### 2. View List
+- **Actor:** User
+- **Action:** Requests to view the list of tasks
+- **System Response:** Shows all tasks formatted with ID, Title, Status, and Description
+- **Acceptance Criteria:**
+  - All tasks are displayed in a readable format
+  - Each task shows ID, Title, Status, and Description
+  - Tasks are listed in a clear, organized manner
+
+### 3. Update Task
+- **Actor:** User
+- **Action:** Selects a task by ID and updates title or description
+- **System Response:** Updates the specified task fields
+- **Acceptance Criteria:**
+  - User can select a specific task by ID
+  - Title or description can be modified
+  - Changes are saved in memory
+
+### 4. Mark Complete
+- **Actor:** User
+- **Action:** Selects a task by ID
+- **System Response:** Changes the status to "Completed"
+- **Acceptance Criteria:**
+  - Task status is updated to "Completed"
+  - The change is reflected in the task list
+  - Task remains in memory but with updated status
+
+### 5. Delete Task
+- **Actor:** User
+- **Action:** Selects a task by ID
+- **System Response:** Removes the task from memory
+- **Acceptance Criteria:**
+  - Task is removed from the in-memory storage
+  - Task no longer appears in the task list
+  - Confirmation may be required before deletion
+
+## Data Structure
+### Task Model
+- **id:** integer (unique identifier, auto-generated)
+- **title:** string (required, non-empty)
+- **description:** string (optional, can be empty)
+- **status:** string (either "Pending" or "Completed")
+
+## CLI Interface
+### Command Pattern
+- Application runs in a loop, prompting for user input
+- Menu-based interface with numbered options:
+  1. Add Task
+  2. View List
+  3. Update Task
+  4. Mark Complete
+  5. Delete Task
+  6. Exit
+- User enters a number to select an option
+- Follow-up prompts for required information based on selected option
+
+### User Interaction Flow
+1. Display main menu with options
+2. User selects an option
+3. System prompts for required information
+4. System processes the request
+5. System displays results or confirmation
+6. Return to main menu or exit based on user choice
+
+## Success Criteria
+- Users can perform all five basic operations (add, view, update, mark complete, delete)
+- Task data persists in memory during the application session
+- User interface is intuitive and easy to navigate
+- Error handling prevents crashes and provides helpful feedback
+- Application runs on all major platforms (Windows, macOS, Linux)
+
+## Assumptions
+- Application runs in a single session (data is lost when application exits)
+- Only one user interacts with the application at a time
+- Users enter valid input when prompted
+- Python 3.14 is available on the target system
+- Dependencies can be managed with `uv`
+
+## Constraints
+- No persistent storage (data stored in-memory only)
+- Console-based interface only (no GUI)
+- Python 3.14 environment with `uv` dependency management
+- No external database dependencies
+- All logic must be testable with `pytest`
